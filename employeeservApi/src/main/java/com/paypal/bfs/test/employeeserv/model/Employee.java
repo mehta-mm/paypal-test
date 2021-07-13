@@ -1,14 +1,17 @@
-package com.paypal.bfs.test.employeeserv.api.model;
+package com.paypal.bfs.test.employeeserv.model;
+
+import javax.validation.constraints.NotNull;
 
 public class Employee {
+
+    public Employee() {
+    }
 
     private Integer id;
     private String firstName;
     private String lastName;
     private String dateOfBirth;
     private Address address;
-    public Employee() {
-    }
 
     public Integer getId() {
         return id;

@@ -53,7 +53,7 @@
                 <version>1.0.2</version>
                 <configuration>
                     <sourceDirectory>${project.basedir}/src/main/resources/v1/schema</sourceDirectory>
-                    <targetPackage>com.paypal.bfs.test.employeeserv.api.model</targetPackage>
+                    <targetPackage>com.paypal.bfs.test.employeeserv.model</targetPackage>
                     <useCommonsLang3>true</useCommonsLang3>
                     <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
                 </configuration>

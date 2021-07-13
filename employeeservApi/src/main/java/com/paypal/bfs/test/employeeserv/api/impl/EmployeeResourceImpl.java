@@ -1,7 +1,9 @@
 package com.paypal.bfs.test.employeeserv.api.impl;
 
 import com.paypal.bfs.test.employeeserv.api.EmployeeResource;
-import com.paypal.bfs.test.employeeserv.api.model.Employee;
+import com.paypal.bfs.test.employeeserv.model.Employee;
+import com.paypal.bfs.test.employeeserv.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,19 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EmployeeResourceImpl implements EmployeeResource {
 
+    @Autowired
+    private EmployeeService employeeService;
+
     @Override
     public ResponseEntity<Employee> employeeGetById(String id) {
-
-        Employee employee = new Employee();
-        employee.setId(Integer.valueOf(id));
-        employee.setFirstName("BFS");
-        employee.setLastName("Developer");
-
-        return new ResponseEntity<>(employee, HttpStatus.OK);
+        return employeeService.getEmployeeById(Integer.parseInt(id));
     }
 
     @Override
     public ResponseEntity<String> createEmployee(Employee employee) {
-        return null;
+        return employeeService.createEmployee(employee);
     }
 }
