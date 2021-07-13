@@ -1,4 +1,4 @@
-package com.paypal.bfs.test.employeeserv.impl;
+package com.paypal.bfs.test.employeeserv.api.impl;
 
 import com.paypal.bfs.test.employeeserv.api.EmployeeResource;
 import com.paypal.bfs.test.employeeserv.api.model.Employee;
@@ -21,5 +21,10 @@ public class EmployeeResourceImpl implements EmployeeResource {
         employee.setLastName("Developer");
 
         return new ResponseEntity<>(employee, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<String> createEmployee(Employee employee) {
+        return null;
     }
 }
