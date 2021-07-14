@@ -47,8 +47,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private String validateEmployee(Employee employee) {
         StringBuilder errorMessage = new StringBuilder();
-        if (employee.getAddress() == null)
+        if (employee.getAddress() == null) {
             errorMessage.append(ADDRESS_MISSING);
+            return errorMessage.toString();
+        }
         if (StringUtils.isEmpty(employee.getAddress().getLine1()))
             errorMessage.append(ADDRESS_LINE_MISSING);
         if (StringUtils.isEmpty(employee.getAddress().getCity()))
