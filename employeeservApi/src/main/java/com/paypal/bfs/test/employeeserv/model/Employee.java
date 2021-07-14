@@ -1,16 +1,26 @@
 package com.paypal.bfs.test.employeeserv.model;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@Entity
+@Table(name = "EMPLOYEE")
 public class Employee {
 
     public Employee() {
     }
 
+    @Id
+    @GeneratedValue
     private Integer id;
+    @Column(nullable = false)
     private String firstName;
+    @Column(nullable = false)
     private String lastName;
+    @Column(nullable = false)
     private String dateOfBirth;
+    @NotNull
+    @Embedded
     private Address address;
 
     public Integer getId() {
@@ -51,5 +61,15 @@ public class Employee {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                '}';
     }
 }

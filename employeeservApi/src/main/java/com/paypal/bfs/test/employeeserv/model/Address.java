@@ -1,13 +1,29 @@
 package com.paypal.bfs.test.employeeserv.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
+
+@Embeddable
 public class Address {
+
+    @NotNull
     private String line1;
     private String line2;
+    @NotNull
     private String city;
+    @NotNull
     private String state;
+    @NotNull
     private String country;
+    @NotNull
     private String zipCode;
 
+    public Address() {
+    }
+
+    @JsonProperty(required = true)
     public String getLine1() {
         return line1;
     }
@@ -16,6 +32,7 @@ public class Address {
         this.line1 = line1;
     }
 
+    @JsonProperty(required = true)
     public String getLine2() {
         return line2;
     }
@@ -24,6 +41,7 @@ public class Address {
         this.line2 = line2;
     }
 
+    @JsonProperty(required = true)
     public String getCity() {
         return city;
     }
@@ -32,6 +50,7 @@ public class Address {
         this.city = city;
     }
 
+    @JsonProperty(required = true)
     public String getState() {
         return state;
     }
@@ -40,6 +59,7 @@ public class Address {
         this.state = state;
     }
 
+    @JsonProperty(required = true)
     public String getCountry() {
         return country;
     }
@@ -48,6 +68,7 @@ public class Address {
         this.country = country;
     }
 
+    @JsonProperty(required = true)
     public String getZipCode() {
         return zipCode;
     }
