@@ -92,7 +92,8 @@ public class EmployeeResourceFunctionalTest {
 
     private Employee mockEmployee() {
         Address address = new Address();
-        address.setLine1("Sector 51");
+        address.setLine1("Sector");
+        address.setLine1("51");
         address.setCity("Gurgaon");
         address.setZipCode("122003");
         address.setState("Haryana");
